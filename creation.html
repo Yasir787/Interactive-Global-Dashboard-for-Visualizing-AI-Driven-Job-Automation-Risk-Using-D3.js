@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>The Creation of Jobs due to AI</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+    />
+    <!-- We have learned of the rem (https://www.sitepoint.com/understanding-and-using-rem-units-in-css/), which should add some auto resizing -->
+    <style>
+      body {
+        margin: 0;
+        background: #e2e5e8;
+        color: #212529;
+        font-family: system-ui, Arial;
+      }
+      header {
+        background: #ffffff;
+        border-bottom: 1px solid #dee2e6;
+        padding: 1.5rem 0;
+      }
+
+      .content-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem;
+      }
+
+      .intro-section {
+        margin-bottom: 4rem;
+      }
+
+      .intro-section p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #495057;
+      }
+
+      .text-section {
+        margin: 3rem 0;
+        padding: 2rem 0;
+      }
+
+      .text-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #212529;
+      }
+
+      .text-section p {
+        color: #495057;
+        line-height: 1.8;
+        margin-bottom: 1rem;
+      }
+
+      .visualization-container {
+        margin: 3rem 0;
+        padding: 2rem;
+        background: #f0efef;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+
+      .visualization-caption {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid #dee2e6;
+        font-size: 0.9rem;
+        color: #6c757d;
+        font-style: italic;
+      }
+
+      .visualization-caption a {
+        color: #0d6efd;
+        text-decoration: none;
+      }
+
+      .visualization-caption a:hover {
+        text-decoration: underline;
+        color: #0a58ca;
+      }
+      #radial_tree {
+        width: 100%;
+        margin: 1rem 0;
+      }
+
+      #radial_tree svg {
+        max-width: 100%;
+        height: auto;
+        font-family: inherit;
+      }
+
+      #scatter-plot-container {
+        width: 100%;
+      }
+
+      #scatter-plot {
+        width: 100%;
+        margin: 1rem 0;
+      }
+
+      #scatter-plot svg {
+        max-width: 100%;
+        height: auto;
+      }
+
+      #chart {
+        width: 100%;
+        margin: 1rem 0;
+      }
+
+      #chart svg {
+        max-width: 100%;
+        height: auto;
+        font-family: inherit;
+      }
+
+      #robot-visualization {
+        width: 100%;
+        margin: 1rem 0;
+      }
+
+      #robot-visualization svg {
+        max-width: 100%;
+        height: auto;
+        font-family: inherit;
+      }
+
+      #matrix-heatmap {
+        width: 100%;
+        margin: 1rem 0;
+      }
+
+      #matrix-heatmap svg {
+        max-width: 100%;
+        height: auto;
+        font-family: inherit;
+      }
+
+      #stock-visualization {
+        width: 100%;
+        margin: 1rem 0;
+      }
+
+      #stock-visualization svg {
+        max-width: 100%;
+        height: auto;
+        font-family: inherit;
+      }
+
+      #ai-visualization {
+        width: 100%;
+        margin: 1rem 0;
+      } 
+
+      #ai-visualization svg {
+        max-width: 100%;
+        height: auto;
+        font-family: inherit;
+      }    
+
+      .back-link {
+        font-size: 0.9rem;
+        text-decoration: none;
+        color: #6c757d;
+      }
+
+      .back-link:hover {
+        color: #212529;
+      }
+
+      .scatter-tooltip {
+        font-family: system-ui, Arial;
+      }
+
+      #industry-donut {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2rem 0;
+      }
+
+      #industry-donut svg {
+        display: block;
+        margin: 0 auto;
+      }
+
+      .highlight-subtle {
+        color: #773030;
+        font-style: italic;
+      }
+
+      .highlight-accent {
+        font-weight: 700;
+        color: #ddc005;
+      }
+
+      .cta-headline {
+        text-align: center;
+        margin-top: 2rem;
+        color: #2611c2;
+        letter-spacing: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div
+          class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-2"
+        >
+          <div>
+            <a href="index.html" class="back-link"
+              >&larr; Back to landing page</a
+            >
+            <h1 class="h3 mb-1 mt-2 mt-md-1">The Creation of Jobs due to AI</h1>
+            <p class="mb-0 text-muted">
+              A scrollytelling walkthrough powered by <strong>D3.js v7</strong>.
+            </p>
+          </div>
+          <div class="text-md-end">
+            <small class="text-muted">CSE 578 – Group Project</small>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="content-container">
+        <section class="intro-section">
+          <p class="creates-intro">
+            While headlines scream about layoffs and skeptics start
+            fear-mongering about automation risks, a quieter revolution is
+            taking place: AI is sparking an unprecedented explosion of new
+            companies, new industries, and new opportunities. Just as the
+            internet birthed Google, Amazon, and countless startups that now
+            employ millions, AI is seeding the next generation of job creators.
+          </p>
+
+          <p class="creates-body">
+            And the jobs most at risk?
+            <span class="highlight-subtle"
+              ><strong>
+                Call centers... Data entry... Repetitive tasks</strong
+              ></span
+            >
+            , whereas AI is showing growth across industries from developer
+            tools to creative platforms..
+            <strong
+              >unlocking opportunities that didn't exist five years ago</strong
+            >.
+          </p>
+
+          <p class="creates-body">
+            Yes, times are changing, but here's the real shift:
+            <span class="highlight-accent"
+              >AI lets you build in weeks what once took years.</span
+            >
+            Ideas become companies. Companies employ thousands.
+          </p>
+
+          <h2 class="cta-headline">
+            Now is the time to build, you can create the next
+          </h2>
+          <h1 class="cta-headline">U N I C O R N !</h1>
+        </section>
+
+        <!--Visualization 1: Industry Growth with Growth Doughnut-->
+        <section class="visualization-container">
+          <div id="industry-donut"></div>
+          <div class="visualization-caption">
+            <strong>Data Source:</strong>
+            <a href="test/ai_job_market_insights.csv" target="_blank"
+              >AI Job Market Insights Dataset</a
+            >
+          </div>
+        </section>
+        <h2>The Cambrian Explosion of AI: Seeds Becoming Trees</h2>
+        <p>
+          540 million years ago, the Cambrian period saw an explosion of new life 
+          forms in Earth's oceans—a biological revolution that shaped the planet 
+          forever. We're witnessing a parallel phenomenon with AI. This visualization 
+          captures over <strong>180 AI-driven startups</strong> that have collectively 
+          raised <strong>$161 billion+ in funding</strong> and employ approximately 
+          <strong>95,000 people directly</strong>—and that's just what's visible today.
+        </p>
+        <p>
+          These aren't just numbers on a chart. They're <em>seeds</em>. Today's 
+          10-person AI startup might become tomorrow's 10,000-employee giant, just 
+          like Google, Facebook, and Amazon did during the internet era. Each sector—
+          Healthcare AI discovering new drugs, Developer Tools empowering solo 
+          creators, Enterprise AI transforming how businesses operate—represents 
+          thousands of future jobs that don't exist yet but will. The question isn't 
+          whether AI creates jobs. It's whether we're paying attention to where 
+          they're sprouting.
+        </p>
+
+        <!-- Visualization 2: Matrix Heatmap -->
+        <section class="visualization-container">
+          <div id="matrix-heatmap"></div>
+          <div class="visualization-caption">
+            <strong>Data Source:</strong>
+            <a href="test/ai_job_market_insights.csv" target="_blank"
+              >AI Job Market Insights Dataset</a
+            >
+          </div>
+        </section>
+
+        <section class="text-section">
+          <h2>AI Is Fueling Job Growth More Than It Causes Decline</h2>
+          <p>As we look across industries, a clear pattern emerges: AI isn’t shrinking the workforce. The largest share of jobs in most sectors falls into the growth category, showing how new AI-related roles and expanded responsibilities are taking hold. Even where jobs aren’t growing, many remain stable, strengthened rather than threatened by AI tools that make everyday tasks easier. Decline exists, but it’s consistently the smallest segment, suggesting that automation is targeted, but thats been the case since forever, even when computers were invented some job did go through a decline</p>
+        </section>
+
+
+        <!--Visualization 3: Innovative Chip design, Startup Boom radial tree-->
+        <section class="visualization-container">
+          <div id="radial_tree"></div>
+          <div class="visualization-caption">
+            <strong>Data Source:</strong>
+          </div>
+        </section>
+
+
+
+        <!--Visualization 4: Robot Visualization-->
+        <section class="visualization-container">
+          <div id="robot-visualization"></div>
+          <div class="visualization-caption">
+            <strong>Data Source:</strong>
+            <a href="DATASOURCEHERE" target="_blank">Data Source:</a>
+          </div>
+        </section>
+
+        <section class="text-section">
+          <h2>AI-Powered Workforce: The Robot's Tools for Job Creation</h2>
+          <p>
+            In the AI-powered workforce, the robot is equipped with tools that symbolize industries where AI adoption is driving job creation. The stethoscope represents the healthcare industry, where AI is improving diagnostics, treatment plans, and operational efficiency. With the AI tool in its core, the robot signifies how AI is revolutionizing healthcare by assisting professionals and improving patient care. The laptop and notebook are tools of the knowledge economy, symbolizing the tech sector and remote work capabilities that are growing as a result of AI. The robot’s clipboard and calculator represent the administrative and finance sectors, where AI is enhancing decision-making, automating repetitive tasks, and improving financial planning. These tools reflect how AI is empowering remote work and digital transformation, creating new job opportunities in sectors like software development and digital services.</p>
+        </section>
+
+
+        <!--Visualization 5: Stock/Area Chart Visualization-->
+        <section class="visualization-container">
+          <div id="stock-visualization"></div>
+          <div class="visualization-caption">
+            <strong>Data Source:</strong>
+            <a href="AI_Impact_(2024–2030).csv" target="_blank">AI Impact Dataset</a>
+          </div>
+        </section>
+
+        <section class="text-section">
+          <h2>AI Is Expanding Opportunities Across Industries</h2>
+          <p>
+            This chart shows how AI is influencing different sectors, and the message is clear: the majority of industries are experiencing moderate to high AI impact. This is important, because higher AI impact is strongly associated with job transformation and job creation, not elimination.
+            As you move across industries you can see that the Moderate + High Impact layer is consistently much larger than the low-impact layer. This indicates that AI is not just automating tasks; it's becoming a driver of workforce expansion and new roles.</p>
+        </section>
+
+        <!--Visualization 6: AI Adoption and Risk Visualization-->
+        <section class="visualization-container">
+          <div id="ai-visualization"></div>
+          <div class="visualization-caption">
+            <strong>Data Source:</strong>
+            <a href="ai_job_market_insights.csv" target="_blank">AI Job Market Insights Dataset</a>
+          </div>
+        </section>
+
+        <section class="text-section">
+          <h2>AI Job Market Insights: A Snapshot of Risk Levels</h2>
+          <p>
+          The AI Job Market Insights visualization provides a clear view of how different sectors are impacted by AI adoption and automation risk. The robot, equipped with tools from various industries, showcases this impact in the form of colored circles representing job sectors. Each circle corresponds to a different level of risk that AI poses to jobs in that sector. Red circles represent sectors at high risk, where automation and AI are expected to displace a significant portion of jobs. Yellow circles represent sectors at medium risk, indicating moderate job displacement, while blue circles symbolize sectors at low risk, where AI adoption is expected to enhance jobs rather than eliminate them. The distribution of circles allows users to easily compare industries and understand which sectors will need to adapt the most to the evolving job market driven by AI.</p>
+
+        </section>
+
+      </div>
+    </main>
+
+    <!--JS files go in here in order of appearance-->
+    <script src="js/ai_startups_tree.js"></script>
+    <script src="js/industry_growth_donut.js"></script>
+    <script src="matrix_visualization.js"></script>
+    <script src="robot.js"></script>
+    <script src="stock_visualization.js"></script>
+    <script src="AI.js"></script>
+  </body>
+</html>

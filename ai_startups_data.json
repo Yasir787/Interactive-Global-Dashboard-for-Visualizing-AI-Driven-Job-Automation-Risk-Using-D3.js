@@ -1,0 +1,1535 @@
+{
+  "metadata": {
+    "title": "AI related Startup Explosion Dataset",
+    "description": "This data set shows AI creating so many new sectors and companies within those sectors creating jobs for around 100,000 employees",
+    "lastUpdated": "2025-12-02",
+    "totalCompanies": 180,
+    "totalFunding": "$161B+",
+    "totalEstimatedEmployees": "~95,000"
+  },
+  "name": "AI",
+  "children": [
+    {
+      "name": "Foundation Models",
+      "description": "Companies building large language models and foundational AI systems",
+      "children": [
+        {
+          "name": "OpenAI",
+          "funding": 40000000000,
+          "employees": 3500,
+          "founded": 2015,
+          "description": "Creator of GPT-4, ChatGPT; $500B valuation Nov 2025",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Anthropic",
+          "funding": 13000000000,
+          "employees": 1800,
+          "founded": 2021,
+          "description": "AI safety company, creator of Claude; $183B valuation Sep 2025",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "xAI",
+          "funding": 20000000000,
+          "employees": 600,
+          "founded": 2023,
+          "description": "Elon Musk's AI lab, creator of Grok",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Mistral AI",
+          "funding": 1100000000,
+          "employees": 80,
+          "founded": 2023,
+          "description": "French AI lab, open-source foundation models",
+          "hq": "Paris, France"
+        },
+        {
+          "name": "Cohere",
+          "funding": 970000000,
+          "employees": 500,
+          "founded": 2019,
+          "description": "Enterprise-focused NLP and LLM platform",
+          "hq": "Toronto, Canada"
+        },
+        {
+          "name": "AI21 Labs",
+          "funding": 336000000,
+          "employees": 350,
+          "founded": 2017,
+          "description": "Israeli AI lab building Jurassic models",
+          "hq": "Tel Aviv, Israel"
+        },
+        {
+          "name": "Inflection AI",
+          "funding": 1525000000,
+          "employees": 200,
+          "founded": 2022,
+          "description": "Personal AI assistant Pi",
+          "hq": "Palo Alto, CA"
+        },
+        {
+          "name": "Adept AI",
+          "funding": 415000000,
+          "employees": 120,
+          "founded": 2022,
+          "description": "AI that can take actions on software",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Sakana AI",
+          "funding": 300000000,
+          "employees": 50,
+          "founded": 2023,
+          "description": "Japanese AI lab by ex-Google researchers",
+          "hq": "Tokyo, Japan"
+        },
+        {
+          "name": "Character.AI",
+          "funding": 150000000,
+          "employees": 180,
+          "founded": 2021,
+          "description": "Conversational AI characters platform",
+          "hq": "Palo Alto, CA"
+        },
+        {
+          "name": "Reka AI",
+          "funding": 110000000,
+          "employees": 60,
+          "founded": 2023,
+          "description": "Multimodal AI models; $1B valuation",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Safe Superintelligence",
+          "funding": 1000000000,
+          "employees": 20,
+          "founded": 2024,
+          "description": "AI safety research by Ilya Sutskever",
+          "hq": "Palo Alto, CA"
+        },
+        {
+          "name": "Thinking Machines Lab",
+          "funding": 2000000000,
+          "employees": 60,
+          "founded": 2024,
+          "description": "Mira Murati's AI research startup",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Reflection AI",
+          "funding": 4000000000,
+          "employees": 80,
+          "founded": 2024,
+          "description": "DeepMind researchers; $8B valuation Oct 2025",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Liquid AI",
+          "funding": 250000000,
+          "employees": 100,
+          "founded": 2023,
+          "description": "Next-gen foundation models from MIT",
+          "hq": "Cambridge, MA"
+        }
+      ]
+    },
+    {
+      "name": "AI Infrastructure",
+      "description": "Cloud computing, data platforms, and ML operations infrastructure",
+      "children": [
+        {
+          "name": "Databricks",
+          "funding": 14000000000,
+          "employees": 8000,
+          "founded": 2013,
+          "description": "Data lakehouse; $62B val Jan 2025, $10B Series J",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Scale AI",
+          "funding": 14300000000,
+          "employees": 1800,
+          "founded": 2016,
+          "description": "AI data labeling; Meta $14.3B investment 2025",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Crusoe",
+          "funding": 2640000000,
+          "employees": 600,
+          "founded": 2018,
+          "description": "AI data centers; $10B valuation Oct 2025",
+          "hq": "Denver, CO"
+        },
+        {
+          "name": "CoreWeave",
+          "funding": 2500000000,
+          "employees": 600,
+          "founded": 2017,
+          "description": "Cloud GPU provider for AI workloads",
+          "hq": "Roseland, NJ"
+        },
+        {
+          "name": "Lambda Labs",
+          "funding": 500000000,
+          "employees": 250,
+          "founded": 2012,
+          "description": "GPU cloud for AI training",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Together AI",
+          "funding": 325000000,
+          "employees": 120,
+          "founded": 2022,
+          "description": "Open-source AI cloud platform",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Anyscale",
+          "funding": 260000000,
+          "employees": 220,
+          "founded": 2019,
+          "description": "Ray framework, distributed AI",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Modal",
+          "funding": 75000000,
+          "employees": 50,
+          "founded": 2021,
+          "description": "Serverless cloud for AI/ML",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Hugging Face",
+          "funding": 395000000,
+          "employees": 250,
+          "founded": 2016,
+          "description": "Open-source ML model hub; $4.5B val",
+          "hq": "New York, NY"
+        },
+        {
+          "name": "Weights & Biases",
+          "funding": 250000000,
+          "employees": 400,
+          "founded": 2017,
+          "description": "MLOps platform for model training",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Pinecone",
+          "funding": 138000000,
+          "employees": 180,
+          "founded": 2019,
+          "description": "Vector database for AI applications",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Weaviate",
+          "funding": 68000000,
+          "employees": 100,
+          "founded": 2019,
+          "description": "Open-source vector database",
+          "hq": "Amsterdam, Netherlands"
+        },
+        {
+          "name": "SF Compute",
+          "funding": 40000000,
+          "employees": 30,
+          "founded": 2024,
+          "description": "GPU-sharing marketplace",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "VAST Data",
+          "funding": 400000000,
+          "employees": 700,
+          "founded": 2016,
+          "description": "AI-native data platform",
+          "hq": "New York, NY"
+        },
+        {
+          "name": "Fireworks AI",
+          "funding": 250000000,
+          "employees": 100,
+          "founded": 2022,
+          "description": "AI app platform; $4B val Oct 2025",
+          "hq": "San Francisco, CA"
+        }
+      ]
+    },
+    {
+      "name": "AI Hardware",
+      "description": "AI chips, processors, and specialized hardware",
+      "children": [
+        {
+          "name": "Cerebras",
+          "funding": 1100000000,
+          "employees": 500,
+          "founded": 2016,
+          "description": "Wafer-scale AI chips",
+          "hq": "Sunnyvale, CA"
+        },
+        {
+          "name": "Groq",
+          "funding": 640000000,
+          "employees": 300,
+          "founded": 2016,
+          "description": "AI inference chips with record speed",
+          "hq": "Mountain View, CA"
+        },
+        {
+          "name": "SambaNova",
+          "funding": 1100000000,
+          "employees": 550,
+          "founded": 2017,
+          "description": "AI hardware and software platform",
+          "hq": "Palo Alto, CA"
+        },
+        {
+          "name": "Tenstorrent",
+          "funding": 693000000,
+          "employees": 450,
+          "founded": 2016,
+          "description": "AI chips by Jim Keller",
+          "hq": "Toronto, Canada"
+        },
+        {
+          "name": "D-Matrix",
+          "funding": 275000000,
+          "employees": 120,
+          "founded": 2019,
+          "description": "AI inference compute; $2B val Nov 2025",
+          "hq": "Santa Clara, CA"
+        },
+        {
+          "name": "Etched.ai",
+          "funding": 120000000,
+          "employees": 40,
+          "founded": 2022,
+          "description": "Transformer-specific AI chips",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Graphcore",
+          "funding": 682000000,
+          "employees": 550,
+          "founded": 2016,
+          "description": "IPU processors for AI",
+          "hq": "Bristol, UK"
+        },
+        {
+          "name": "Hailo",
+          "funding": 224000000,
+          "employees": 250,
+          "founded": 2017,
+          "description": "Edge AI processors",
+          "hq": "Tel Aviv, Israel"
+        },
+        {
+          "name": "Rain AI",
+          "funding": 50000000,
+          "employees": 60,
+          "founded": 2017,
+          "description": "Brain-inspired AI chips",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Untether AI",
+          "funding": 125000000,
+          "employees": 120,
+          "founded": 2018,
+          "description": "High-efficiency inference chips",
+          "hq": "Toronto, Canada"
+        }
+      ]
+    },
+    {
+      "name": "Developer Tools",
+      "description": "AI coding assistants and software development tools",
+      "children": [
+        {
+          "name": "Cursor (Anysphere)",
+          "funding": 3200000000,
+          "employees": 80,
+          "founded": 2022,
+          "description": "AI code editor; $29.3B val Nov 2025",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Replit",
+          "funding": 200000000,
+          "employees": 250,
+          "founded": 2016,
+          "description": "Browser IDE with AI assistant",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Codeium",
+          "funding": 150000000,
+          "employees": 120,
+          "founded": 2022,
+          "description": "Free AI code completion",
+          "hq": "Mountain View, CA"
+        },
+        {
+          "name": "Cognition (Devin)",
+          "funding": 175000000,
+          "employees": 40,
+          "founded": 2023,
+          "description": "First AI software engineer",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Magic AI",
+          "funding": 437000000,
+          "employees": 100,
+          "founded": 2022,
+          "description": "AI code with long context",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Poolside",
+          "funding": 500000000,
+          "employees": 90,
+          "founded": 2023,
+          "description": "AI coding platform; $3B val",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Lovable",
+          "funding": 215000000,
+          "employees": 50,
+          "founded": 2024,
+          "description": "AI coding; $1.8B val Jul 2025",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Sourcegraph",
+          "funding": 225000000,
+          "employees": 350,
+          "founded": 2013,
+          "description": "AI code search and intelligence",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Tabnine",
+          "funding": 55000000,
+          "employees": 120,
+          "founded": 2013,
+          "description": "AI code completion",
+          "hq": "Tel Aviv, Israel"
+        },
+        {
+          "name": "LangChain",
+          "funding": 35000000,
+          "employees": 60,
+          "founded": 2022,
+          "description": "LLM application framework",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Snyk",
+          "funding": 1000000000,
+          "employees": 1400,
+          "founded": 2015,
+          "description": "AI developer security",
+          "hq": "Boston, MA"
+        },
+        {
+          "name": "Mintlify",
+          "funding": 21000000,
+          "employees": 30,
+          "founded": 2021,
+          "description": "AI documentation platform",
+          "hq": "San Francisco, CA"
+        }
+      ]
+    },
+    {
+      "name": "Healthcare AI",
+      "description": "Medical documentation, diagnostics, and drug discovery",
+      "children": [
+        {
+          "name": "Tempus",
+          "funding": 1300000000,
+          "employees": 2800,
+          "founded": 2015,
+          "description": "Precision medicine through AI",
+          "hq": "Chicago, IL"
+        },
+        {
+          "name": "Recursion",
+          "funding": 1140000000,
+          "employees": 800,
+          "founded": 2013,
+          "description": "AI-powered drug discovery",
+          "hq": "Salt Lake City, UT"
+        },
+        {
+          "name": "Abridge",
+          "funding": 773000000,
+          "employees": 400,
+          "founded": 2018,
+          "description": "AI medical documentation; $5.3B val Jun 2025",
+          "hq": "Pittsburgh, PA"
+        },
+        {
+          "name": "OpenEvidence",
+          "funding": 485000000,
+          "employees": 80,
+          "founded": 2022,
+          "description": "Medical AI chatbot; $6B val Oct 2025",
+          "hq": "Boston, MA"
+        },
+        {
+          "name": "Hippocratic AI",
+          "funding": 404000000,
+          "employees": 150,
+          "founded": 2023,
+          "description": "Healthcare LLMs; $3.5B val Nov 2025",
+          "hq": "Palo Alto, CA"
+        },
+        {
+          "name": "Insitro",
+          "funding": 743000000,
+          "employees": 400,
+          "founded": 2018,
+          "description": "ML for drug discovery",
+          "hq": "South San Francisco, CA"
+        },
+        {
+          "name": "Ambience Healthcare",
+          "funding": 300000000,
+          "employees": 200,
+          "founded": 2020,
+          "description": "AI healthcare operating system",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "PathAI",
+          "funding": 250000000,
+          "employees": 350,
+          "founded": 2016,
+          "description": "AI-powered pathology",
+          "hq": "Boston, MA"
+        },
+        {
+          "name": "Viz.ai",
+          "funding": 250000000,
+          "employees": 400,
+          "founded": 2016,
+          "description": "AI stroke detection",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Paige AI",
+          "funding": 220000000,
+          "employees": 250,
+          "founded": 2017,
+          "description": "AI cancer diagnosis",
+          "hq": "New York, NY"
+        },
+        {
+          "name": "EliseAI",
+          "funding": 295000000,
+          "employees": 300,
+          "founded": 2017,
+          "description": "Healthcare automation; $2.2B val",
+          "hq": "New York, NY"
+        },
+        {
+          "name": "AKASA",
+          "funding": 185000000,
+          "employees": 250,
+          "founded": 2019,
+          "description": "Healthcare revenue cycle AI",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Nabla",
+          "funding": 44000000,
+          "employees": 100,
+          "founded": 2018,
+          "description": "AI copilot for doctors",
+          "hq": "Paris, France"
+        },
+        {
+          "name": "Lila Sciences",
+          "funding": 350000000,
+          "employees": 60,
+          "founded": 2024,
+          "description": "Science superintelligence; Oct 2025",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Xaira Therapeutics",
+          "funding": 1000000000,
+          "employees": 120,
+          "founded": 2024,
+          "description": "AI drug development",
+          "hq": "San Francisco, CA"
+        }
+      ]
+    },
+    {
+      "name": "Creative AI",
+      "description": "AI for image, video, audio, and music generation",
+      "children": [
+        {
+          "name": "Midjourney",
+          "funding": 0,
+          "employees": 60,
+          "founded": 2022,
+          "description": "AI image generation platform",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Black Forest Labs",
+          "funding": 300000000,
+          "employees": 80,
+          "founded": 2024,
+          "description": "FLUX models; $3.25B val Dec 2025",
+          "hq": "Freiburg, Germany"
+        },
+        {
+          "name": "Runway",
+          "funding": 235000000,
+          "employees": 180,
+          "founded": 2018,
+          "description": "AI video generation and editing",
+          "hq": "New York, NY"
+        },
+        {
+          "name": "ElevenLabs",
+          "funding": 180000000,
+          "employees": 180,
+          "founded": 2022,
+          "description": "AI voice synthesis; $3B+ val",
+          "hq": "New York, NY"
+        },
+        {
+          "name": "Stability AI",
+          "funding": 300000000,
+          "employees": 180,
+          "founded": 2020,
+          "description": "Open-source AI image generation",
+          "hq": "London, UK"
+        },
+        {
+          "name": "Pika",
+          "funding": 80000000,
+          "employees": 60,
+          "founded": 2023,
+          "description": "AI video generation",
+          "hq": "Palo Alto, CA"
+        },
+        {
+          "name": "Ideogram",
+          "funding": 80000000,
+          "employees": 80,
+          "founded": 2022,
+          "description": "AI image with text rendering",
+          "hq": "Toronto, Canada"
+        },
+        {
+          "name": "Luma AI",
+          "funding": 70000000,
+          "employees": 60,
+          "founded": 2021,
+          "description": "3D capture and generation",
+          "hq": "Palo Alto, CA"
+        },
+        {
+          "name": "Fal.ai",
+          "funding": 200000000,
+          "employees": 60,
+          "founded": 2021,
+          "description": "Generative media; $1.5B val Jul 2025",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Synthesia",
+          "funding": 156000000,
+          "employees": 300,
+          "founded": 2017,
+          "description": "AI video with avatars",
+          "hq": "London, UK"
+        },
+        {
+          "name": "Descript",
+          "funding": 175000000,
+          "employees": 230,
+          "founded": 2017,
+          "description": "AI audio/video editing",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Suno",
+          "funding": 125000000,
+          "employees": 80,
+          "founded": 2022,
+          "description": "AI music generation",
+          "hq": "Cambridge, MA"
+        },
+        {
+          "name": "HeyGen",
+          "funding": 60000000,
+          "employees": 120,
+          "founded": 2020,
+          "description": "AI video avatar",
+          "hq": "Los Angeles, CA"
+        }
+      ]
+    },
+    {
+      "name": "Enterprise AI",
+      "description": "Enterprise search, productivity, and workflow automation",
+      "children": [
+        {
+          "name": "Glean",
+          "funding": 360000000,
+          "employees": 600,
+          "founded": 2019,
+          "description": "AI enterprise search; $4.5B val",
+          "hq": "Palo Alto, CA"
+        },
+        {
+          "name": "Writer",
+          "funding": 326000000,
+          "employees": 350,
+          "founded": 2020,
+          "description": "Enterprise generative AI",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Uniphore",
+          "funding": 260000000,
+          "employees": 400,
+          "founded": 2008,
+          "description": "Enterprise AI; $2.5B val Oct 2025",
+          "hq": "Palo Alto, CA"
+        },
+        {
+          "name": "Jasper",
+          "funding": 131000000,
+          "employees": 450,
+          "founded": 2021,
+          "description": "AI content for marketing",
+          "hq": "Austin, TX"
+        },
+        {
+          "name": "Notion AI",
+          "funding": 343000000,
+          "employees": 700,
+          "founded": 2013,
+          "description": "AI-powered workspace",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Grammarly",
+          "funding": 400000000,
+          "employees": 1000,
+          "founded": 2009,
+          "description": "AI writing assistant",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Hebbia",
+          "funding": 130000000,
+          "employees": 100,
+          "founded": 2020,
+          "description": "AI document search",
+          "hq": "New York, NY"
+        },
+        {
+          "name": "Pryon",
+          "funding": 115000000,
+          "employees": 140,
+          "founded": 2019,
+          "description": "Enterprise RAG solutions",
+          "hq": "Raleigh, NC"
+        },
+        {
+          "name": "Typeface",
+          "funding": 165000000,
+          "employees": 180,
+          "founded": 2022,
+          "description": "Enterprise content AI",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Tome",
+          "funding": 75000000,
+          "employees": 80,
+          "founded": 2020,
+          "description": "AI presentations",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Perplexity",
+          "funding": 250000000,
+          "employees": 120,
+          "founded": 2022,
+          "description": "AI answer engine",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "You.com",
+          "funding": 100000000,
+          "employees": 80,
+          "founded": 2020,
+          "description": "AI search; $1.5B val Sep 2025",
+          "hq": "San Francisco, CA"
+        }
+      ]
+    },
+    {
+      "name": "Sales & Marketing AI",
+      "description": "Revenue intelligence, customer service, and marketing automation",
+      "children": [
+        {
+          "name": "Gong",
+          "funding": 584000000,
+          "employees": 1400,
+          "founded": 2015,
+          "description": "Revenue intelligence platform",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Sierra",
+          "funding": 350000000,
+          "employees": 180,
+          "founded": 2023,
+          "description": "AI customer agents; $10B val Sep 2025",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Cresta",
+          "funding": 151000000,
+          "employees": 400,
+          "founded": 2017,
+          "description": "AI for contact centers",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "People.ai",
+          "funding": 200000000,
+          "employees": 450,
+          "founded": 2016,
+          "description": "Revenue operations AI",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Clari",
+          "funding": 500000000,
+          "employees": 800,
+          "founded": 2013,
+          "description": "AI revenue platform",
+          "hq": "Sunnyvale, CA"
+        },
+        {
+          "name": "Outreach",
+          "funding": 489000000,
+          "employees": 1200,
+          "founded": 2014,
+          "description": "AI sales engagement",
+          "hq": "Seattle, WA"
+        },
+        {
+          "name": "6sense",
+          "funding": 500000000,
+          "employees": 1300,
+          "founded": 2013,
+          "description": "AI-powered ABM",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Apollo.io",
+          "funding": 251000000,
+          "employees": 550,
+          "founded": 2015,
+          "description": "AI sales intelligence",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Clay",
+          "funding": 62000000,
+          "employees": 100,
+          "founded": 2016,
+          "description": "AI data enrichment",
+          "hq": "New York, NY"
+        },
+        {
+          "name": "Mutiny",
+          "funding": 75000000,
+          "employees": 120,
+          "founded": 2018,
+          "description": "AI website personalization",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Mercor",
+          "funding": 450000000,
+          "employees": 120,
+          "founded": 2023,
+          "description": "AI hiring; $10B val Oct 2025",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Alembic",
+          "funding": 145000000,
+          "employees": 80,
+          "founded": 2022,
+          "description": "AI marketing analytics",
+          "hq": "San Francisco, CA"
+        }
+      ]
+    },
+    {
+      "name": "Finance AI",
+      "description": "Fintech, payments, and financial services AI",
+      "children": [
+        {
+          "name": "Stripe",
+          "funding": 8700000000,
+          "employees": 8500,
+          "founded": 2010,
+          "description": "AI-powered payments",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Ramp",
+          "funding": 1600000000,
+          "employees": 1200,
+          "founded": 2019,
+          "description": "AI expense management",
+          "hq": "New York, NY"
+        },
+        {
+          "name": "Brex",
+          "funding": 1500000000,
+          "employees": 1400,
+          "founded": 2017,
+          "description": "AI corporate cards",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Plaid",
+          "funding": 734000000,
+          "employees": 1100,
+          "founded": 2013,
+          "description": "Financial data with AI",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Upstart",
+          "funding": 335000000,
+          "employees": 1600,
+          "founded": 2012,
+          "description": "AI lending platform",
+          "hq": "San Mateo, CA"
+        },
+        {
+          "name": "Digits",
+          "funding": 100000000,
+          "employees": 180,
+          "founded": 2018,
+          "description": "AI-powered accounting",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Rho",
+          "funding": 196000000,
+          "employees": 400,
+          "founded": 2018,
+          "description": "AI business banking",
+          "hq": "New York, NY"
+        },
+        {
+          "name": "Model ML",
+          "funding": 75000000,
+          "employees": 50,
+          "founded": 2024,
+          "description": "AI for investment banking",
+          "hq": "New York, NY"
+        },
+        {
+          "name": "F2 AI",
+          "funding": 25000000,
+          "employees": 45,
+          "founded": 2023,
+          "description": "AI for private markets",
+          "hq": "New York, NY"
+        },
+        {
+          "name": "Qraft Technologies",
+          "funding": 146000000,
+          "employees": 100,
+          "founded": 2016,
+          "description": "AI asset management",
+          "hq": "Seoul, South Korea"
+        },
+        {
+          "name": "Nevis",
+          "funding": 35000000,
+          "employees": 30,
+          "founded": 2024,
+          "description": "AI wealth management",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "FurtherAI",
+          "funding": 25000000,
+          "employees": 60,
+          "founded": 2022,
+          "description": "AI insurance underwriting",
+          "hq": "San Francisco, CA"
+        }
+      ]
+    },
+    {
+      "name": "Legal AI",
+      "description": "AI for legal research, contracts, and compliance",
+      "children": [
+        {
+          "name": "Harvey",
+          "funding": 600000000,
+          "employees": 250,
+          "founded": 2022,
+          "description": "Legal AI; $8B val Oct 2025",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Clio",
+          "funding": 900000000,
+          "employees": 1400,
+          "founded": 2008,
+          "description": "AI legal practice management",
+          "hq": "Vancouver, Canada"
+        },
+        {
+          "name": "EvenUp",
+          "funding": 435000000,
+          "employees": 500,
+          "founded": 2019,
+          "description": "Personal injury AI; $2B+ val Oct 2025",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Ironclad",
+          "funding": 333000000,
+          "employees": 550,
+          "founded": 2014,
+          "description": "AI contract lifecycle",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Luminance",
+          "funding": 104000000,
+          "employees": 300,
+          "founded": 2015,
+          "description": "AI contract negotiation",
+          "hq": "London, UK"
+        },
+        {
+          "name": "Norm AI",
+          "funding": 98000000,
+          "employees": 80,
+          "founded": 2023,
+          "description": "AI compliance; Nov 2025 Blackstone",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Spellbook",
+          "funding": 20000000,
+          "employees": 60,
+          "founded": 2021,
+          "description": "AI contract drafting",
+          "hq": "Toronto, Canada"
+        },
+        {
+          "name": "Evisort",
+          "funding": 55000000,
+          "employees": 180,
+          "founded": 2016,
+          "description": "AI contract intelligence",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Lexion",
+          "funding": 55000000,
+          "employees": 100,
+          "founded": 2018,
+          "description": "AI contract management",
+          "hq": "Seattle, WA"
+        },
+        {
+          "name": "Kira Systems",
+          "funding": 65000000,
+          "employees": 180,
+          "founded": 2011,
+          "description": "AI contract analysis",
+          "hq": "Toronto, Canada"
+        }
+      ]
+    },
+    {
+      "name": "Security AI",
+      "description": "Cybersecurity, threat detection, and AI safety",
+      "children": [
+        {
+          "name": "Abnormal Security",
+          "funding": 534000000,
+          "employees": 700,
+          "founded": 2018,
+          "description": "AI email security; $5B+ val",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "SentinelOne",
+          "funding": 696000000,
+          "employees": 2700,
+          "founded": 2013,
+          "description": "AI endpoint security",
+          "hq": "Mountain View, CA"
+        },
+        {
+          "name": "Cyera",
+          "funding": 460000000,
+          "employees": 350,
+          "founded": 2021,
+          "description": "AI data security",
+          "hq": "New York, NY"
+        },
+        {
+          "name": "Vectra AI",
+          "funding": 350000000,
+          "employees": 800,
+          "founded": 2012,
+          "description": "AI threat detection",
+          "hq": "San Jose, CA"
+        },
+        {
+          "name": "Chainguard",
+          "funding": 256000000,
+          "employees": 180,
+          "founded": 2021,
+          "description": "AI supply chain security",
+          "hq": "Kirkland, WA"
+        },
+        {
+          "name": "Darktrace",
+          "funding": 230000000,
+          "employees": 2400,
+          "founded": 2013,
+          "description": "AI cyber defense",
+          "hq": "Cambridge, UK"
+        },
+        {
+          "name": "Sublime Security",
+          "funding": 190000000,
+          "employees": 120,
+          "founded": 2020,
+          "description": "AI email security; $150M Oct 2025",
+          "hq": "Washington, DC"
+        },
+        {
+          "name": "Protect AI",
+          "funding": 68000000,
+          "employees": 100,
+          "founded": 2022,
+          "description": "AI/ML security platform",
+          "hq": "Seattle, WA"
+        },
+        {
+          "name": "Arize AI",
+          "funding": 58000000,
+          "employees": 100,
+          "founded": 2020,
+          "description": "AI observability",
+          "hq": "Berkeley, CA"
+        },
+        {
+          "name": "Harmonic",
+          "funding": 100000000,
+          "employees": 60,
+          "founded": 2023,
+          "description": "AI reasoning; Dec 2025 Series B",
+          "hq": "San Francisco, CA"
+        }
+      ]
+    },
+    {
+      "name": "Robotics & Autonomous",
+      "description": "Humanoid robots, autonomous vehicles, and defense tech",
+      "children": [
+        {
+          "name": "Figure AI",
+          "funding": 1254000000,
+          "employees": 700,
+          "founded": 2022,
+          "description": "Humanoid robots; $35B val 2025",
+          "hq": "Sunnyvale, CA"
+        },
+        {
+          "name": "Waymo",
+          "funding": 5700000000,
+          "employees": 2800,
+          "founded": 2009,
+          "description": "Autonomous driving",
+          "hq": "Mountain View, CA"
+        },
+        {
+          "name": "Anduril",
+          "funding": 2800000000,
+          "employees": 2800,
+          "founded": 2017,
+          "description": "AI defense systems",
+          "hq": "Costa Mesa, CA"
+        },
+        {
+          "name": "Shield AI",
+          "funding": 1000000000,
+          "employees": 800,
+          "founded": 2015,
+          "description": "AI pilots for defense",
+          "hq": "San Diego, CA"
+        },
+        {
+          "name": "Nuro",
+          "funding": 2200000000,
+          "employees": 1300,
+          "founded": 2016,
+          "description": "Autonomous delivery; $6B val",
+          "hq": "Mountain View, CA"
+        },
+        {
+          "name": "Physical Intelligence",
+          "funding": 400000000,
+          "employees": 120,
+          "founded": 2024,
+          "description": "Robot brain; $2B val",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Skild AI",
+          "funding": 300000000,
+          "employees": 100,
+          "founded": 2023,
+          "description": "Robotics foundation models",
+          "hq": "Pittsburgh, PA"
+        },
+        {
+          "name": "Agility Robotics",
+          "funding": 179000000,
+          "employees": 250,
+          "founded": 2015,
+          "description": "Digit humanoid robots",
+          "hq": "Corvallis, OR"
+        },
+        {
+          "name": "1X Technologies",
+          "funding": 125000000,
+          "employees": 120,
+          "founded": 2014,
+          "description": "Humanoid robots (Eve, Neo)",
+          "hq": "Moss, Norway"
+        },
+        {
+          "name": "Skydio",
+          "funding": 670000000,
+          "employees": 550,
+          "founded": 2014,
+          "description": "Autonomous drones",
+          "hq": "San Mateo, CA"
+        },
+        {
+          "name": "Chaos Industries",
+          "funding": 510000000,
+          "employees": 200,
+          "founded": 2022,
+          "description": "Counter-drone; $4.5B val Nov 2025",
+          "hq": "Los Angeles, CA"
+        },
+        {
+          "name": "Quantum Systems",
+          "funding": 340000000,
+          "employees": 300,
+          "founded": 2015,
+          "description": "Defense drones; €340M 2025",
+          "hq": "Munich, Germany"
+        },
+        {
+          "name": "Covariant",
+          "funding": 222000000,
+          "employees": 180,
+          "founded": 2017,
+          "description": "AI-powered robotic picking",
+          "hq": "Emeryville, CA"
+        },
+        {
+          "name": "Saronic",
+          "funding": 175000000,
+          "employees": 250,
+          "founded": 2021,
+          "description": "Autonomous naval vessels",
+          "hq": "Austin, TX"
+        },
+        {
+          "name": "Forterra",
+          "funding": 163000000,
+          "employees": 230,
+          "founded": 2021,
+          "description": "Autonomous ground transport",
+          "hq": "Pittsburgh, PA"
+        }
+      ]
+    },
+    {
+      "name": "Education AI",
+      "description": "AI tutoring, language learning, and educational technology",
+      "children": [
+        {
+          "name": "Duolingo",
+          "funding": 183000000,
+          "employees": 800,
+          "founded": 2011,
+          "description": "AI language learning",
+          "hq": "Pittsburgh, PA"
+        },
+        {
+          "name": "Coursera",
+          "funding": 464000000,
+          "employees": 1500,
+          "founded": 2012,
+          "description": "Online learning with AI",
+          "hq": "Mountain View, CA"
+        },
+        {
+          "name": "Khan Academy",
+          "funding": 16000000,
+          "employees": 450,
+          "founded": 2008,
+          "description": "AI tutoring (Khanmigo)",
+          "hq": "Mountain View, CA"
+        },
+        {
+          "name": "Speak",
+          "funding": 77000000,
+          "employees": 100,
+          "founded": 2016,
+          "description": "AI language through conversation",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Synthesis",
+          "funding": 20000000,
+          "employees": 90,
+          "founded": 2020,
+          "description": "AI learning for kids",
+          "hq": "Austin, TX"
+        },
+        {
+          "name": "Quizlet",
+          "funding": 62000000,
+          "employees": 350,
+          "founded": 2005,
+          "description": "AI study tools",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Ello",
+          "funding": 27000000,
+          "employees": 50,
+          "founded": 2020,
+          "description": "AI reading tutor for kids",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Numerade",
+          "funding": 28000000,
+          "employees": 120,
+          "founded": 2018,
+          "description": "AI video tutoring",
+          "hq": "Pasadena, CA"
+        },
+        {
+          "name": "Memrise",
+          "funding": 22000000,
+          "employees": 70,
+          "founded": 2010,
+          "description": "AI language learning",
+          "hq": "London, UK"
+        },
+        {
+          "name": "Outsmart",
+          "funding": 13000000,
+          "employees": 20,
+          "founded": 2024,
+          "description": "AI for college access",
+          "hq": "San Francisco, CA"
+        }
+      ]
+    },
+    {
+      "name": "Life Sciences AI",
+      "description": "Biotech, drug discovery, and scientific research AI",
+      "children": [
+        {
+          "name": "EvolutionaryScale",
+          "funding": 142000000,
+          "employees": 50,
+          "founded": 2023,
+          "description": "Bio AI models for therapeutics",
+          "hq": "New York, NY"
+        },
+        {
+          "name": "Insilico Medicine",
+          "funding": 407000000,
+          "employees": 450,
+          "founded": 2014,
+          "description": "AI drug discovery",
+          "hq": "Hong Kong"
+        },
+        {
+          "name": "Genesis Therapeutics",
+          "funding": 190000000,
+          "employees": 100,
+          "founded": 2019,
+          "description": "AI molecular discovery",
+          "hq": "Burlingame, CA"
+        },
+        {
+          "name": "Isomorphic Labs",
+          "funding": 0,
+          "employees": 120,
+          "founded": 2021,
+          "description": "AI drug discovery (DeepMind)",
+          "hq": "London, UK"
+        },
+        {
+          "name": "Bioptimus",
+          "funding": 76000000,
+          "employees": 60,
+          "founded": 2023,
+          "description": "AI foundation models for bio",
+          "hq": "Paris, France"
+        },
+        {
+          "name": "Exscientia",
+          "funding": 585000000,
+          "employees": 550,
+          "founded": 2012,
+          "description": "AI-driven drug design",
+          "hq": "Oxford, UK"
+        },
+        {
+          "name": "Atomwise",
+          "funding": 174000000,
+          "employees": 120,
+          "founded": 2012,
+          "description": "AI drug discovery platform",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "KoBold Metals",
+          "funding": 491500000,
+          "employees": 250,
+          "founded": 2018,
+          "description": "AI for mineral exploration",
+          "hq": "Berkeley, CA"
+        },
+        {
+          "name": "Schrödinger",
+          "funding": 520000000,
+          "employees": 1200,
+          "founded": 1990,
+          "description": "AI molecular simulation",
+          "hq": "New York, NY"
+        },
+        {
+          "name": "Periodic Labs",
+          "funding": 300000000,
+          "employees": 40,
+          "founded": 2024,
+          "description": "AI scientist; Sep 2025 seed",
+          "hq": "San Francisco, CA"
+        }
+      ]
+    },
+    {
+      "name": "Consumer AI",
+      "description": "Consumer-facing AI applications and devices",
+      "children": [
+        {
+          "name": "Sesame",
+          "funding": 250000000,
+          "employees": 80,
+          "founded": 2024,
+          "description": "Voice AI; Oct 2025 Series B",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Decart",
+          "funding": 100000000,
+          "employees": 40,
+          "founded": 2023,
+          "description": "AI research lab; $3.1B val",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Rabbit",
+          "funding": 30000000,
+          "employees": 60,
+          "founded": 2023,
+          "description": "AI hardware device",
+          "hq": "Santa Monica, CA"
+        },
+        {
+          "name": "Humane",
+          "funding": 241000000,
+          "employees": 220,
+          "founded": 2018,
+          "description": "AI Pin wearable",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "Replika",
+          "funding": 11000000,
+          "employees": 60,
+          "founded": 2017,
+          "description": "AI companion chatbot",
+          "hq": "San Francisco, CA"
+        },
+        {
+          "name": "PhotoRoom",
+          "funding": 55000000,
+          "employees": 100,
+          "founded": 2019,
+          "description": "AI photo editing app",
+          "hq": "Paris, France"
+        },
+        {
+          "name": "BeReal",
+          "funding": 90000000,
+          "employees": 120,
+          "founded": 2020,
+          "description": "Social app with AI",
+          "hq": "Paris, France"
+        },
+        {
+          "name": "Doppel",
+          "funding": 50000000,
+          "employees": 40,
+          "founded": 2023,
+          "description": "AI impersonation protection",
+          "hq": "San Francisco, CA"
+        }
+      ]
+    }
+  ]
+}

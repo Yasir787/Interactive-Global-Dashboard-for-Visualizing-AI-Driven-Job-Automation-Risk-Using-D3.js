@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>The Destruction of Jobs due to AI</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+    />
+    <!-- We have learned of the rem (https://www.sitepoint.com/understanding-and-using-rem-units-in-css/), which should add some auto resizing -->
+    <style>
+      body {
+        margin: 0;
+        background: #050608;
+        color: #f5f5f5;
+        font-family: system-ui, Arial;
+      }
+      header {
+        background: #050608;
+        border-bottom: 1px solid #222;
+        padding: 1.5rem 0;
+      }
+
+      .content-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem;
+      }
+
+      .intro-section {
+        margin-bottom: 4rem;
+      }
+
+      .intro-section p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #d0d0d0;
+      }
+
+      .text-section {
+        margin: 3rem 0;
+        padding: 2rem 0;
+      }
+
+      .text-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #f5f5f5;
+      }
+
+      .text-section p {
+        color: #d0d0d0;
+        line-height: 1.8;
+        margin-bottom: 1rem;
+      }
+
+      .visualization-container {
+        margin: 3rem 0;
+        padding: 2rem;
+        background: rgba(21, 21, 31, 0.5);
+        border-radius: 8px;
+      }
+
+      .visualization-caption {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid #333;
+        font-size: 0.9rem;
+        color: #9a9a9a;
+        font-style: italic;
+      }
+
+      .visualization-caption a {
+        color: #6c9eff;
+        text-decoration: none;
+      }
+
+      .visualization-caption a:hover {
+        text-decoration: underline;
+      }
+
+      #scatter-plot-container {
+        width: 100%;
+      }
+
+      #scatter-plot {
+        width: 100%;
+        margin: 1rem 0;
+      }
+
+      #scatter-plot svg {
+        max-width: 100%;
+        height: auto;
+      }
+
+      #chart {
+        width: 100%;
+        margin: 1rem 0;
+      }
+
+      #chart svg {
+        max-width: 100%;
+        height: auto;
+        font-family: inherit;
+      }
+
+      #industry-bar-chart {
+        width: 100%;
+        margin: 1rem 0;
+      }
+
+      #industry-bar-chart svg {
+        max-width: 100%;
+        height: auto;
+      }
+
+      #radar-visualization {
+        width: 100%;
+        margin: 1rem 0;
+      }
+
+      #radar-visualization svg {
+        max-width: 100%;
+        height: auto;
+        font-family: inherit;
+      }
+
+      #flames-visualization {
+        width: 100%;
+        margin: 1rem 0;
+      }
+
+      #flames-visualization svg {
+        max-width: 100%;
+        height: auto;
+        font-family: inherit;
+      }
+
+      #world-map {
+        width: 100%;
+        margin: 1rem 0;
+      }
+
+    #world-map svg {
+      max-width: 100%;
+      height: auto;
+      font-family: inherit;
+    }
+
+    .world-map-controls {
+      margin-bottom: 1rem;
+    }
+
+    #job-constellation-country {
+      width: 100%;
+      margin: 1rem 0;
+    }
+
+    #job-constellation-country svg {
+      max-width: 100%;
+      height: auto;
+      font-family: inherit;
+    }
+
+    #job-constellation-controls {
+      margin-bottom: 1rem;
+    }
+
+      .back-link {
+        font-size: 0.9rem;
+        text-decoration: none;
+        color: #b0b0b0;
+      }
+
+      .back-link:hover {
+        color: #ffffff;
+      }
+
+      .scatter-tooltip {
+        font-family: system-ui, Arial;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div
+          class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-2"
+        >
+          <div>
+            <a href="index.html" class="back-link"
+              >&larr; Back to landing page</a
+            >
+            <h1 class="h3 mb-1 mt-2 mt-md-1">
+              The Destruction of Jobs due to AI
+            </h1>
+            <p class="mb-0 text-muted">
+              A scrollytelling walkthrough powered by <strong>D3.js v7</strong>.
+            </p>
+          </div>
+          <div class="text-md-end">
+            <small class="text-muted">CSE 578 – Group Project</small>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="content-container">
+        <section class="intro-section">
+          <p>
+            As artificial intelligence continues to advance at an unprecedented
+            pace, the question of whether AI creates or destroys jobs has become
+            one of the most pressing concerns of our time.             While proponents
+            argue that AI will generate new opportunities as it enhances
+            productivity, much like previous technological advancements, an
+            examination of the data reveals more troubling trends. This
+            scrollytelling page explores how AI automation is fundamentally
+            reshaping the job market and how many of the jobs we rely on are at
+            substantial risk of being automated.
+          </p>
+        </section>
+
+        <!--Visualization 1-Scatter Plot, modified version of negative page no.1 it now has tooltips and size is set to median salary,
+      since I have no idea what size represented in the orignal no,1 , also using automation impact for color since I have no idea 
+      what the colors mean in the original no.1 as well, its been reimplemented in d3.js since there was no code posted.-->
+        <section class="visualization-container">
+          <div id="scatter-plot-container">
+            <div id="scatter-plot"></div>
+          </div>
+          <div class="visualization-caption">
+            <strong>Data Source:</strong>
+            <a
+              href="https://github.com/ArunK-ML/Data-analysis---AI-Impact-on-Job-Market-2024-2030----DataSet"
+              target="_blank"
+            >
+              AI Impact on Job Market (2024–2030) Dataset
+            </a>
+          </div>
+        </section>
+
+        <section class="text-section">
+          <h2>Understanding the Risk Landscape</h2>
+          <p>
+            The scatter plot above maps thousands of jobs based on their
+            automation risk and growth rate. Each dot represents a specific
+            occupation, with its position showing how vulnerable it is to AI
+            automation (horizontal axis) and its projected growth (vertical
+            axis). The color of each dot indicates the AI impact level—red for
+            high impact, orange for moderate, and green for low impact.
+          </p>
+          <p>
+            Use the dropdown menu above the chart to filter by industry and
+            explore how different sectors are affected. Hover over individual
+            dots to see detailed information about each job, including its
+            title, salary, required education, and specific automated risk.
+          </p>
+        </section>
+
+        <section class="text-section">
+          <h2>The Uncomfortable Truth: A Massive Number of Jobs Are at Risk</h2>
+          <p>
+            What becomes immediately apparent when examining this visualization
+            is that massive cross section of jobs are at risk, from Fast food
+            restaurant managers to Sales executives an incredible section of our
+            occupations are at risk. Even high skill/education jobs such as
+            literal executives are at risk.
+          </p>
+          <p>
+            The data reveals that jobs requiring advanced education and offering
+            substantial compensation are not immune to automation. In fact, many
+            professional roles in managment, legal services, finance, and
+            technology are high-risk, with specific examples including the
+            aforementioned sales executives, materials engineers, investment
+            analysts, etc. Workers who have invested years in education and
+            career development may find their roles increasingly automated, with
+            AI systems capable of performing complex decision-making tasks that
+            were once the exclusive domain of human professionals, steadily
+            reducing the need for human workers.
+          </p>
+        </section>
+
+        <!-- Visualization 2: Industry Bar Chart -->
+        <section class="visualization-container">
+          <div id="industry-bar-chart"></div>
+          <div class="visualization-caption">
+            <strong>Data Source:</strong>
+            <a
+              href="https://github.com/ArunK-ML/Data-analysis---AI-Impact-on-Job-Market-2024-2030----DataSet"
+              target="_blank"
+            >
+              AI Impact on Job Market (2024–2030) Dataset
+            </a>
+          </div>
+        </section>
+
+        <section class="text-section">
+          <h2>Understanding Risk by Industry</h2>
+          <p>
+            The industry bar chart above shows the average automation risk by
+            industry. The x-axis is the industry name and the y-axis is the
+            average automation risk. The color of the bars indicates the AI
+            impact level in the form of a gradient from white (low impact) to
+            red (high impact).
+          </p>
+        </section>
+
+        <section class="text-section">
+          <h2>The Most at Risk Industries</h2>
+          <p>
+            Besides specific jobs that are at risk, the industry bar chart above
+            indicates that while essentially all industries face substantial
+            AI risk, some industries are much more impacted than others.
+            While some sectors like education are likely to receive
+            minimal impact, finance in particular faces high risk of massive
+            disruption, and with it significant job loss. A large selection of other industries
+            are also at risk, though to a lesser degree, such as entertainment and
+            healthcare. This data helps drive home that a massive variety and
+            number of jobs are at risk, including those in industries that
+            might be considered most desirable, such as finance.
+          </p>
+        </section>
+
+        <!--Visualization 3: Radar Chart-->
+        <section class="visualization-container">
+          <div id="radar-visualization"></div>
+          <div class="visualization-caption">
+            <strong>Data Source:</strong>
+            <a href="ai_jobs_radar.csv" target="_blank">
+              AI Jobs Radar Dataset
+            </a>
+          </div>
+        </section>
+
+        <section class="text-section">
+          <h2>
+            Multi-Dimensional Destruction: A More Complete Picture of The Risks
+          </h2>
+          <p>
+            The radar chart above reveals the comprehensive threat that AI poses
+            across different sectors. Each polygon represents an sector of the
+            economy, with its shape showing how vulnerable that sector is across
+            multiple dimensions: automation risk, AI exposure, wage pressure,
+            reskilling gaps, and job security loss. The larger the polygon, the
+            more comprehensively that industry faces disruption.
+          </p>
+        </section>
+
+        <section class="text-section">
+          <h2>AI Encroaches on Every Sector</h2>
+          <p>
+            The emergence of ChatGPT and similar LLMs in late 2022 marked a
+            turning point. Unlike previous automation that replaced manual or
+            routine tasks, these systems can perform cognitive work that was
+            previously thought to be uniquely human. Customer support roles,
+            which appear prominently in the radar chart with high AI exposure
+            scores, have been particularly hard hit. But it is not the only
+            sector at risk, while some sectors are (relatively) safe, such as
+            education and creative industries, the majority have high risk
+            ratings across the board and all stand to lose jobs(and wages) to
+            AI. Some sectors in particular, manufacturing, retail, and admin,
+            have a high reskilling gap, meaning that workers in these sectors
+            will have a hard time transitioning to new roles, and may even be
+            left behind as their skills become obsolete.
+          </p>
+        </section>
+
+        <!--Visualization 4: Flames visualization showing global AI adoption-->
+        <section class="visualization-container">
+          <div id="flames-visualization"></div>
+          <div class="visualization-caption">
+            <strong>Data Source:</strong>
+            <a href="data.csv" target="_blank"> Global AI Adoption Dataset </a>
+          </div>
+        </section>
+
+        <section class="text-section">
+          <h2>The Global Inferno: AI Adoption Spreads Worldwide</h2>
+          <p>
+            The flames visualization above represents the global scale of AI's
+            recent boom. Each circle represents a country, positioned within
+            flame layers that correspond to their level of AI adoption and the
+            corresponding job risk. The size of each circle reflects the
+            country's population, meaning that larger circles represent millions
+            more workers at risk.
+          </p>
+          <p>
+            Countries in the red "High" layer, including China, the United
+            States, Japan, and major European economies, have aggressively
+            adopted AI technologies. These nations represent billions of workers
+            whose jobs are now in jeopardy. The visualization makes clear that
+            this is not a localized problem, AI proliferation stands to create a
+            global crisis affecting the world's largest economies and
+            workforces.
+          </p>
+        </section>
+
+        <section class="text-section">
+          <h2>Scale and Speed: Why This Time Is Different</h2>
+          <p>
+            Historical technological disruptions, from the Industrial Revolution
+            to the computer age, created new jobs even as they eliminated old
+            ones. However, the current 'AI revolution' is fundamentally
+            different in both scale and speed. The flames visualization shows
+            that countries representing a massive proportion of the world's
+            population are in the high-risk category, and this transition is
+            happening not over decades, but over years.
+          </p>
+          <p>
+            The scale of this transition is also unprecedented, as unlike
+            previous technological shifts, AI is not just augmenting human
+            capabilities, but sometimes replacing them entirely (e.g., generating summaries
+            of research papers in seconds, even if at lower quality, where a human
+            would have to spend hours reading and summarizing the paper). This
+            fundamental shift from augmentation to replacement is what turns the scale of AI adoption into a potential crisis.
+          </p>
+        </section>
+
+        <!--Visualization 5: World Map showing automation risk by country-->
+        <section class="visualization-container">
+          <div id="world-map"></div>
+          <div class="visualization-caption">
+            <strong>Data Source:</strong>
+            <a
+              href="https://github.com/ArunK-ML/Data-analysis---AI-Impact-on-Job-Market-2024-2030----DataSet"
+              target="_blank"
+            >
+              AI Impact on Job Market (2024–2030) Dataset
+            </a>
+          </div>
+        </section>
+
+        <section class="text-section">
+          <h2>Global Risk Map: No Country Is Immune</h2>
+          <p>
+            The world map above visualizes average automation risk by country.
+            Use the dropdown menu to filter by specific job titles and see how
+            different occupations face varying levels of risk across different
+            nations. Hover over countries to see their specific automation risk
+            percentages for the job selected.
+          </p>
+          <p>
+            What becomes immediately apparent is that automation risk is
+            remarkably consistent across countries, about 49-51% globally. This
+            narrow range is itself telling: it suggests that AI's impact on jobs
+            is not dependent on a country's level of development, economic
+            system, or labor regulations. Whether in developed economies like
+            the United States and United Kingdom, or emerging markets, the
+            threat of automation looms equally large.
+          </p>
+        </section>
+
+        <section class="text-section">
+          <h2>The Borderless Nature of AI Job Destruction</h2>
+          <p>
+            The geographic visualization underscores a critical point: AI-driven job loss respects no borders. Unlike previous waves of 
+            automation that primarily affected manufacturing in specific regions, AI technologies, especially cloud-based LLMs like 
+            ChatGPT and its alternatives, can be deployed instantly and simultaneously across the globe. A company in New York can replace customer service 
+            workers in India, a firm in London can automate data analysis that once required analysts in multiple countries, and a 
+            startup in San Francisco can eliminate roles that previously existed in dozens of nations.
+          </p>
+          <p>
+            This borderless nature means that workers cannot simply relocate to avoid automation. The map shows that whether you're in a 
+            high income country with strong labor protections or a developing economy, the automation risk remains consistently high. The 
+            proliferation of AI has created a global labor market disruption where geographic advantages offer little protection. Workers 
+            everywhere face the same fundamental challenge: adapting to an economy where AI can perform an expanding range of tasks 
+            previously reserved for human intelligence.
+          </p>
+        </section>
+
+        <!--Visualization 6: Job Constellation by Country-->
+        <section class="visualization-container">
+          <div id="job-constellation-controls"></div>
+          <div id="job-constellation-country"></div>
+          <div class="visualization-caption">
+            <strong>Data Source:</strong>
+            <a href="https://github.com/ArunK-ML/Data-analysis---AI-Impact-on-Job-Market-2024-2030----DataSet" target="_blank">
+              AI Impact on Job Market (2024–2030) Dataset
+            </a>
+          </div>
+        </section>
+
+        <section class="text-section">
+          <h2>The Constellation of Job Destruction: A Complex Web of Risk</h2>
+          <p>
+            The job constellation visualization above provides a final, comprehensive view of how 
+            AI threatens employment across different countries and industries. Each 'star' represents a 
+            job, orbiting around a country center in rings that correspond to different industry sectors. 
+            The size of each star reflects its automation risk, larger stars face higher risk, while the color 
+            indicates AI impact level with green for low impact, yellow for moderate, and red for high impact.
+          </p>
+          <p>
+            Use the dropdown menu to explore different countries and see how their job markets are structured. 
+            Click on any sector's orbit label to toggle between grouped and spread views, revealing 
+            how jobs within that industry are distributed. Hover over individual stars to see more detailed information 
+            about each job's risk profile in tooltip form.
+          </p>
+        </section>
+
+        <section class="text-section">
+          <h2>The Inescapable Conclusion: AI's Path of Destruction</h2>
+          <p>
+            As we trace through these visualizations, from the individual jobs at risk, to larger industries under threat, 
+            to global patterns of adoption, and finally to the complex constellation of employment  
+            a pattern emerges. AI is not merely changing the job market, it is systematically 
+            dismantling it across multiple dimensions simultaneously. These visualizations show that automation risk is not 
+            isolated to low skill positions or specific sectors, but now permeate every level of the economy, from 
+            entry-level service jobs to executive positions, from manufacturing to finance to healthcare.
+          </p>
+          <p>
+            The relatively recent large language models like ChatGPT, Deepseek, and Gemni, have accelerated this 
+            destruction to a unprecedented pace. Unlike previous technological revolutions that created new industries 
+            and employment opportunities faster than it reduced them, current AI systems are designed to replace human cognitive labor,
+            the very foundation of most modern employment, and certainly the best modern employment.
+          </p>
+          <p>
+            AI is causing or will cause substantial job losses across the globe, across industries, and across skill 
+            levels. Without significant intervention, policy changes, and a fundamental rethinking of how we value human labor in 
+            an our economy, millions of workers face displacement with few viable alternatives.
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <!--JS files go in here in order of appearance-->
+    <script src="scatter_plot.js"></script>
+    <script src="industry_bar_chart.js"></script>
+    <script src="radar.js"></script>
+    <script src="flames.js"></script>
+    <script src="js/world_map.js"></script>
+    <script src="js/job_constellation_country.js"></script>
+
+  </body>
+</html>

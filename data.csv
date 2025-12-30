@@ -1,0 +1,50 @@
+Country,AI_Adoption_Level,Population
+China,High,1412600000
+United States,High,339000000
+South Korea,High,51700000
+Japan,High,124000000
+Germany,High,84000000
+United Kingdom,High,68000000
+Singapore,High,5900000
+France,High,65000000
+Canada,High,40000000
+Australia,High,26000000
+Netherlands,High,18000000
+Sweden,High,10500000
+Switzerland,High,8900000
+Finland,High,5600000
+Israel,High,9600000
+India,Medium,1428600000
+Brazil,Medium,214000000
+Russia,Medium,144000000
+Mexico,Medium,130000000
+Turkey,Medium,85000000
+Italy,Medium,59000000
+Spain,Medium,48000000
+Saudi Arabia,Medium,36000000
+Poland,Medium,38000000
+South Africa,Medium,60000000
+Argentina,Medium,46000000
+Thailand,Medium,71000000
+Malaysia,Medium,33000000
+Vietnam,Medium,98000000
+Philippines,Medium,113000000
+Indonesia,Low,277000000
+Egypt,Low,112000000
+Pakistan,Low,241000000
+Bangladesh,Low,173000000
+Nigeria,Low,223000000
+Kenya,Low,55000000
+Ethiopia,Low,126000000
+Tanzania,Low,67000000
+Uganda,Low,49000000
+Morocco,Low,38000000
+Iraq,Low,46000000
+Peru,Low,34000000
+Colombia,Low,52000000
+Chile,Low,20000000
+Ukraine,Low,41000000
+Romania,Low,19000000
+Greece,Low,10700000
+Portugal,Low,10300000
+New Zealand,Low,5200000

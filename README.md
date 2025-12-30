@@ -1,0 +1,1 @@
+To run this project just open the project folder in vscode or an equivalent and right click the index (3).html file, select the 'Open with Live Server' option, and then on your browser you arrive at the landing page.

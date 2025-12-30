@@ -1,0 +1,275 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+    />
+    <title>Matrix Visualization</title>
+    <style>
+      body {
+        background-color: white;
+        color: balck;
+      }
+      #heatmap {
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        background-color: #e5e5e8;
+        background-image: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 0.1) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.1) 1px,
+            transparent 1px
+          );
+        background-size: 50px 50px;
+      }
+      #tooltip {
+        position: absolute;
+        pointer-events: none;
+        background: #c8c8c9;
+        padding: 6px 10px;
+        border-radius: 5px;
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="heatmap"></div>
+    <div id="tooltip"></div>
+  </body>
+  <script>
+    const clean = (value) => {
+      if (value === null || value === undefined) {
+        return "";
+      }
+      value = value.toString();
+      value = value.normalize("NFKC");
+      value = value.trim();
+
+      return value;
+    };
+
+    const ai_roles = ["AI Researcher", "Data Scientist", "Software Engineer"];
+
+    d3.csv("ai_job_market_insights.csv").then((raw) => {
+      raw.forEach((d) => {
+        d.Industry = clean(d.Industry);
+        d.Job_Growth_Projection = clean(d.Job_Growth_Projection);
+        d.Job_Title = clean(d.Job_Title);
+      });
+
+      const ai_jobs = raw.filter(
+        (d) => ai_roles.includes(d.Job_Title) && d.Industry !== "Manufacturing"
+      );
+
+      let industries = [];
+      for (let i = 0; i < ai_jobs.length; i++) {
+        if (industries.indexOf(ai_jobs[i].Industry) == -1) {
+          industries.push(ai_jobs[i].Industry);
+        }
+      }
+      const projections = ["Growth", "Stable", "Decline"];
+      const counts = {};
+      for (const ind of industries) {
+        counts[ind] = { Growth: 0, Decline: 0, Stable: 0 };
+      }
+      for (const job of ai_jobs) {
+        const industry = job.Industry;
+        const proj = job.Job_Growth_Projection;
+        const industryCounts = counts[industry];
+        if (industryCounts) {
+          industryCounts[proj] += 1;
+        }
+      }
+
+      const data = [];
+      industries.forEach((ind) => {
+        const total =
+          counts[ind].Growth + counts[ind].Decline + counts[ind].Stable;
+        projections.forEach((p) => {
+          let percent = 0;
+          if (total > 0) {
+            percent = (counts[ind][p] / total) * 100;
+            percent = percent.toFixed(1);
+          }
+          data.push({
+            industry: ind,
+            projection: p,
+            count: counts[ind][p],
+            percent: percent,
+          });
+        });
+      });
+      const margin = { top: 50, right: 50, bottom: 50, left: 180 };
+      const width = 900 - margin.left - margin.right;
+      const height = 500 - margin.top - margin.bottom;
+
+      const svg = d3
+        .select("#heatmap")
+        .append("svg")
+        .attr(
+          "viewBox",
+          `0 0 ${width + margin.left + margin.right * 2.3} ${
+            height + margin.top + margin.bottom * 2
+          }`
+        )
+        .attr("preserveAspectRatio", "xMidYMid")
+        .append("g")
+        .attr("transform", `translate(${margin.left},${margin.top})`);
+
+      const x = d3
+        .scaleBand()
+        .domain(industries)
+        .range([0, width])
+        .padding(0.1);
+
+      const y = d3
+        .scaleBand()
+        .domain(projections)
+        .range([0, height])
+        .padding(0.1);
+
+      function colorScale(d) {
+        const p = d.percent / 100;
+        if (d.projection === "Growth")
+          return d3.interpolateRgb("#a5d6a7", "#2e7d32")(p);
+        if (d.projection === "Decline")
+          return d3.interpolateRgb("#bfbfbf", "#7b7d7b")(p);
+        if (d.projection === "Stable")
+          return d3.interpolateRgb("#ff9999", "#c0392b")(p);
+      }
+      const x_axis = svg
+        .append("g")
+        .attr("transform", `translate(0,${height})`)
+        .attr("class", "axis")
+        .call(d3.axisBottom(x));
+
+      x_axis.selectAll("line, path").remove();
+
+      x_axis
+        .selectAll("text")
+        .attr("transform", "rotate(-30)")
+        .style("text-anchor", "end");
+
+      svg
+        .append("g")
+        .attr("class", "axis")
+        .call(d3.axisLeft(y))
+        .selectAll("line, path")
+        .remove();
+
+      const tooltip = d3.select("#tooltip");
+
+      svg
+        .selectAll("rect")
+        .data(data)
+        .enter()
+        .append("rect")
+        .attr("class", "cell")
+        .attr("x", (d) => x(d.industry))
+        .attr("y", (d) => y(d.projection))
+        .attr("width", x.bandwidth())
+        .attr("height", y.bandwidth())
+        .style("fill", (d) => colorScale(d))
+        .on("mouseover", (event, d) => {
+          d3.select(event.currentTarget)
+            .style("stroke", colorScale(d))
+            .style("stroke-width", 5);
+          tooltip
+            .style("opacity", 1)
+            .html(
+              `<strong>${d.industry}</strong><br/>${d.projection}: ${d.count} jobs<br/>(${d.percent}%)`
+            );
+        })
+        .on("mousemove", (event, d) => {
+          tooltip
+            .style("left", event.pageX + 10 + "px")
+            .style("top", event.pageY - 28 + "px");
+        })
+        .on("mouseout", () => {
+          d3.select(event.currentTarget).style("stroke", "none");
+          tooltip.style("opacity", 0);
+        });
+
+      svg
+        .selectAll(".cell-text")
+        .data(data)
+        .enter()
+        .append("text")
+        .attr("class", "cell-text")
+        .attr("x", (d) => x(d.industry) + x.bandwidth() / 2)
+        .attr("y", (d) => y(d.projection) + y.bandwidth() / 2 + 5)
+        .attr("text-anchor", "middle")
+        .text((d) => d.percent + "%")
+        .style("pointer-events", "none")
+        .style("font-size", "10px");
+
+      const legend_data = ["Growth", "Decline", "Stable"];
+      const legend = svg
+        .append("g")
+        .attr("transform", `translate(${width}, 0)`);
+
+      legend
+        .selectAll("rect")
+        .data(legend_data)
+        .enter()
+        .append("rect")
+        .attr("x", 40)
+        .attr("y", (d, i) => i * 25)
+        .attr("width", 20)
+        .attr("height", 20)
+        .style("fill", (d) => {
+          if (d === "Growth") return "#2e7d32";
+          if (d === "Decline") return "#d3d3d3";
+          return "#c0392b";
+        })
+        .style("stroke", "#555");
+
+      legend
+        .selectAll("text")
+        .data(legend_data)
+        .enter()
+        .append("text")
+        .attr("x", 70)
+        .attr("y", (d, i) => i * 25 + 15)
+        .text((d) => d)
+        .style("font-size", "12px")
+        .style("fill", "#0c0c14");
+
+      svg
+        .append("line")
+        .attr("x1", -3)
+        .attr("y1", 0)
+        .attr("x2", -3)
+        .attr("y2", height)
+        .attr("stroke", "white")
+        .attr("stroke-width", 2);
+
+      svg
+        .append("line")
+        .attr("x1", width + 3)
+        .attr("y1", 0)
+        .attr("x2", width + 3)
+        .attr("y2", height)
+        .attr("stroke", "white")
+        .attr("stroke-width", 2);
+
+      svg
+        .append("text")
+        .attr("x", width + 40)
+        .attr("y", height + 5)
+        .attr("text-anchor", "end")
+        .style("fill", "black")
+        .style("font-size", "10px")
+        .text("3 × 9");
+    });
+  </script>
+</html>

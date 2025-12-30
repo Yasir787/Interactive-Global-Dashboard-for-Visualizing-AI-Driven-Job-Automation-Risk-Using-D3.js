@@ -1,0 +1,11 @@
+Sector,Automation_Risk,AI_Exposure,Wage_Pressure,Reskilling_Gap,Job_Security_Loss
+Manufacturing,9,8,8,7,8
+Retail,8,7,7,6,7
+Transport_&_Logistics,8,7,6,6,7
+Customer_Support,7,9,9,5,9
+Finance_&_Insurance,6,8,7,4,7
+IT_&_Software,4,9,6,3,6
+Administration_&_Back_Office,9,8,8,7,8
+Healthcare_Admin,7,7,6,5,6
+Education_Admin,6,6,5,5,5
+Creative_Industries,5,6,5,4,5
